@@ -2,15 +2,18 @@ package ale444113.anticheat;
 
 import java.io.File;
 
-import ale444113.anticheat.comandos.anticheatcommand;
+import ale444113.anticheat.commands.AntiCheatCommand;
+import ale444113.anticheat.events.PlayerJoin;
+import ale444113.anticheat.events.PlayerLeave;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import ale444113.anticheat.eventos.ComprobarSpeed;
-import ale444113.anticheat.eventos.ComprobarFly;
+import ale444113.anticheat.events.CheckSpeed;
+import ale444113.anticheat.events.CheckFly;
 
 public class AntiCheat extends JavaPlugin{
     public String rutaConfig;
@@ -28,6 +31,10 @@ public class AntiCheat extends JavaPlugin{
         registrarEvent();
         registerConfig();
 
+        for (Player p : Bukkit.getOnlinePlayers()) {
+            PlayerJoin.createPlayerWarnings(p);
+        }
+
     }
     public void onDisable(){
         Bukkit.getConsoleSender().sendMessage(ChatColor.RED+"---------------------------------------------------------------------");
@@ -37,12 +44,16 @@ public class AntiCheat extends JavaPlugin{
     }
 
     public void registrarComandos() {
-        this.getCommand("anticheat").setExecutor(new anticheatcommand(this));
+        this.getCommand("anticheat").setExecutor(new AntiCheatCommand(this));
     }
     public void registrarEvent() {
         PluginManager pm = 	getServer().getPluginManager();
-        pm.registerEvents(new ComprobarFly(this), this);
-        pm.registerEvents(new ComprobarSpeed(this), this);
+
+        pm.registerEvents(new PlayerJoin(this), this);
+        pm.registerEvents(new PlayerLeave(this), this);
+
+        pm.registerEvents(new CheckFly(this), this);
+        pm.registerEvents(new CheckSpeed(this), this);
     }
     public void registerConfig() {
         File config = new File(this.getDataFolder(),"config.yml");

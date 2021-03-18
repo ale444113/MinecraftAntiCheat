@@ -1,7 +1,5 @@
 #Si desea que un jugador reciba avisos debe tener el permiso -> anticheat.warnings
 Config:
-  #Aquí definimos la página o discord en la que podran apelar los usuarios
-  apeal: discord.gg/TeFuisteBan
 
   speed:
     enable: yes
@@ -10,7 +8,7 @@ Config:
     #Especificamos los máximos avisos que daremos antes de sancionarlo, si solo quiere aviso deberas poner 0
     warnings: 3
     #Aquí especificamos la razón del baneo o kickeo por uso de speed, siempre comienza por -> Ha sido (kickeado/baneado), por lo que esto no hay que ponerlo.
-    reason: Ha sido baneado por uso de speed, si cree que es un error vaya a #Dejamos un espacio ya que arriba definimos donde apelar
+    reason: Ha sido baneado por uso de speed, si cree que es un error vaya a discord.gg/TeFuisteBan
     #Definimos la sanción, si el comando esta mal escrito dara un error, puedes usar {user}, {reason} y {time}
     punishment: ban {user} {reason}
     #El tiempo que durará la sanción, 0 es permanente. Ejemplos: 1d, 1y, 1w, 1m
@@ -24,7 +22,7 @@ Config:
     #Especificamos los máximos avisos que daremos antes de sancionarlo, si solo quiere aviso deberas poner 0
     warnings: 3
     #Aquí especificamos la razón del baneo o kickeo por uso de speed, siempre comienza por -> Ha sido (kickeado/baneado), por lo que esto no hay que ponerlo.
-    reason: Ha sido baneado por uso de fly, si cree que es un error vaya a #Dejamos un espacio ya que arriba definimos donde apelar
+    reason: Ha sido baneado por uso de fly, si cree que es un error vaya a discord.gg/TeFuisteBan
     #Definimos la sanción, puede ser -> kick o ban
     punishment: ban {user} {reason}
     #El tiempo que durará la sanción, 0 es permanente. Ejemplos: 1d, 1y, 1w, 1m
