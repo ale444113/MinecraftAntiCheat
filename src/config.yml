@@ -7,14 +7,14 @@ Config:
     velocity: 0.75
     #Especificamos los máximos avisos que daremos antes de sancionarlo, si solo quiere aviso deberas poner 0
     warnings: 3
-    #Aquí especificamos la razón del baneo o kickeo por uso de speed, siempre comienza por -> Ha sido (kickeado/baneado), por lo que esto no hay que ponerlo.
+    #Aquí especificamos la razón del baneo o kickeo por uso de speed, s.iempre comienza por -> Ha sido (kickeado/baneado), por lo que esto no hay que ponerlo.
     reason: Ha sido baneado por uso de speed, si cree que es un error vaya a discord.gg/TeFuisteBan
     #Definimos la sanción, si el comando esta mal escrito dara un error, puedes usar {user}, {reason} y {time}
     punishment: ban {user} {reason}
     #El tiempo que durará la sanción, 0 es permanente. Ejemplos: 1d, 1y, 1w, 1m
     punishment-time: 0
     #Aquí definimos el mensaje que le dará al los staffs, los que tienen el permiso anticheat.warnings por defecto "{user}" será sustituido por el nombre y "{warnings}" por sus avisos activos
-    staff-message: El jugador {user} es sospechoso de uso de speed ({warnings})
+    staff-message: "&b El jugador {user} es sospechoso de uso de speed ({warnings})"
     staff-message-punishment: El jugador {user} fue sancionado por uso de speed ({punishment})
 
   fly:
@@ -28,5 +28,5 @@ Config:
     #El tiempo que durará la sanción, 0 es permanente. Ejemplos: 1d, 1y, 1w, 1m
     punishment-time: 0
     #Aquí definimos el mensaje que le dará al los staffs, los que tienen el permiso anticheat.warnings por defecto "{user}" será sustituido por el nombre y "{warnings}" por sus avisos activos
-    staff-message: El jugador {user} es sospechoso de uso de fly ({warnings})
+    staff-message: "&c El jugador {user} es sospechoso de uso de fly ({warnings})"
     staff-message-punishment: El jugador {user} fue sancionado por uso de fly ({punishment})

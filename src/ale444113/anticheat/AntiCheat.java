@@ -3,17 +3,15 @@ package ale444113.anticheat;
 import java.io.File;
 
 import ale444113.anticheat.commands.AntiCheatCommand;
-import ale444113.anticheat.events.PlayerJoin;
-import ale444113.anticheat.events.PlayerLeave;
+import ale444113.anticheat.events.*;
+import ale444113.anticheat.events.playerEvents.PlayerJoin;
+import ale444113.anticheat.events.playerEvents.PlayerLeave;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import ale444113.anticheat.events.CheckSpeed;
-import ale444113.anticheat.events.CheckFly;
 
 public class AntiCheat extends JavaPlugin{
     public String rutaConfig;
@@ -52,8 +50,7 @@ public class AntiCheat extends JavaPlugin{
         pm.registerEvents(new PlayerJoin(this), this);
         pm.registerEvents(new PlayerLeave(this), this);
 
-        pm.registerEvents(new CheckFly(this), this);
-        pm.registerEvents(new CheckSpeed(this), this);
+        pm.registerEvents(new moveEvent(this), this);
     }
     public void registerConfig() {
         File config = new File(this.getDataFolder(),"config.yml");

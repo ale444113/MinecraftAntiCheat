@@ -16,7 +16,7 @@ public class AntiCheatCommand implements CommandExecutor{
     public boolean onCommand(CommandSender sender, Command comando, String label, String[] args) {
         if(args.length < 1) {
             sender.sendMessage(plugin.nombre+ChatColor.translateAlternateColorCodes('&', "&1 Creo que quiere decir /antichear reload ...."));
-        }else if(args[1] == "reload") {
+        }else if(args[1].equals("reload")) {
             if(sender.hasPermission("anticheat.reload")){
                 plugin.reloadConfig();
                 sender.sendMessage(plugin.nombre+ChatColor.translateAlternateColorCodes('&',"&a Plugin recargado con exito"));
